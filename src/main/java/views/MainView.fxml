@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="main.java.controllers.MainController">
+   <top>
+      <VBox spacing="10">
+         <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+         </padding>
+         <Label text="Gestion de Contacts" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+         <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Rechercher:"/>
+            <TextField fx:id="searchField" promptText="Nom, prénom, téléphone ou email" HBox.hgrow="ALWAYS"/>
+            <Label text="Catégorie:"/>
+            <ComboBox fx:id="categoryFilter" prefWidth="150"/>
+         </HBox>
+      </VBox>
+   </top>
+   
+   <center>
+      <TableView fx:id="contactTable" BorderPane.alignment="CENTER">
+         <columns>
+			<TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+			<TableColumn fx:id="nomColumn" prefWidth="100.0" text="Nom" />
+			<TableColumn fx:id="prenomColumn" prefWidth="100.0" text="Prénom" />
+			<TableColumn fx:id="telephoneColumn" prefWidth="100.0" text="Téléphone" />
+			<TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+			<TableColumn fx:id="categorieColumn" prefWidth="100.0" text="Catégorie" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   
+   <right>
+      <VBox spacing="10" alignment="TOP_CENTER" prefWidth="120">
+         <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+         </padding>
+         <Button fx:id="newButton" text="Nouveau" maxWidth="Infinity" onAction="#handleNewContact"/>
+         <Button fx:id="editButton" text="Modifier" maxWidth="Infinity" onAction="#handleEditContact"/>
+         <Button fx:id="viewButton" text="Voir détails" maxWidth="Infinity" onAction="#handleViewContact"/>
+         <Button fx:id="deleteButton" text="Supprimer" maxWidth="Infinity" onAction="#handleDeleteContact"/>
+         <Separator/>
+         <Button fx:id="refreshButton" text="Actualiser" maxWidth="Infinity" onAction="#handleRefresh"/>
+      </VBox>
+   </right>
+   
+   <bottom>
+      <HBox spacing="10" alignment="CENTER_LEFT">
+         <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+         </padding>
+         <Label fx:id="statusLabel" text="Prêt"/>
+      </HBox>
+   </bottom>
+</BorderPane>

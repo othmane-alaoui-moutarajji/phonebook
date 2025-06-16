@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+		xmlns:fx="http://javafx.com/fxml/1" 
+    	fx:controller="main.java.controllers.ContactController" 
+      	spacing="10" prefWidth="500" prefHeight="500">
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20"/>
+   </padding>
+   
+   <Label text="Détails du contact" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+   
+   <GridPane vgap="10" hgap="10">
+      <columnConstraints>
+         <ColumnConstraints prefWidth="100"/>
+         <ColumnConstraints prefWidth="300" hgrow="ALWAYS"/>
+      </columnConstraints>
+      
+      <!-- Ligne 1 -->
+      <Label text="Nom *:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+      <TextField fx:id="nomField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+      
+      <!-- Ligne 2 -->
+      <Label text="Prénom *:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+      <TextField fx:id="prenomField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+      
+      <!-- Ligne 3 -->
+      <Label text="Téléphone:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+      <TextField fx:id="telephoneField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+      
+      <!-- Ligne 4 -->
+      <Label text="Email:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+      <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+      
+      <!-- Ligne 5 -->
+      <Label text="Adresse:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+      <TextArea fx:id="adresseArea" GridPane.rowIndex="4" GridPane.columnIndex="1" prefHeight="60"/>
+      
+      <!-- Ligne 6 -->
+      <Label text="Date naiss.:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+      <DatePicker fx:id="dateNaissancePicker" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+      
+      <!-- Ligne 7 -->
+      <Label text="Catégorie:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+      <ComboBox fx:id="categorieField" GridPane.rowIndex="6" GridPane.columnIndex="1" editable="false" maxWidth="Infinity"/>
+      
+      <!-- Ligne 8 -->
+      <Label text="Notes:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+      <TextArea fx:id="notesArea" GridPane.rowIndex="7" GridPane.columnIndex="1" prefHeight="80"/>
+   </GridPane>
+   
+   <HBox spacing="10" alignment="CENTER_RIGHT">
+      <Button fx:id="saveButton" text="Enregistrer" onAction="#handleSave" defaultButton="true"/>
+      <Button fx:id="cancelButton" text="Annuler" onAction="#handleCancel" cancelButton="true"/>
+   </HBox>
+</VBox>
