@@ -1,9 +1,9 @@
-package main.java.controllers;
+package controllers;
 
-import main.java.models.Contact;
-import main.java.models.ContactDAO;
-import main.java.models.MySQLContactDAO;
-import main.java.utils.AlertUtils;
+import models.Contact;
+import models.ContactDAO;
+import models.MySQLContactDAO;
+import utils.AlertUtils;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -335,7 +335,7 @@ public class MainController {
     private void openContactDetails(Contact contact, boolean isNewContact, boolean readOnly) {
         try {
             // Charger le FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/views/ContactView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/ContactView.fxml"));
             Parent root = loader.load();
             
             // Obtenir le contrôleur

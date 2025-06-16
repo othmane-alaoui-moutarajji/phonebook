@@ -1,7 +1,7 @@
-package main.java.models;
+package models;
 
 import java.sql.*;
-import main.java.utils.AlertUtils;
+import utils.AlertUtils;
 
 public class DBConnection {
     

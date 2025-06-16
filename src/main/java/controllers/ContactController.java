@@ -1,13 +1,13 @@
-package main.java.controllers;
+package controllers;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import main.java.models.Contact;
-import main.java.models.ContactDAO;
-import main.java.utils.AlertUtils;
+import models.Contact;
+import models.ContactDAO;
+import utils.AlertUtils;
 
 import java.util.Arrays;
 import java.util.List;

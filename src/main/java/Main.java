@@ -1,4 +1,3 @@
-package main.java;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +13,8 @@ public class Main extends Application {
             System.out.println("Démarrage de l'application...");
             
             // Charger le fichier FXML principal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/views/MainView.fxml"));
+            // NEW, CORRECT LINE
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/MainView.fxml"));
             Parent root = loader.load();
             
             // Configurer la scène
